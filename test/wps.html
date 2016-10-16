@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+
+    <title></title>
+    <!-- 基本资源库 -->
+    <script type="text/javascript" src="../js/lib/jquery.js"></script>
+    <!--<script type="text/javascript" src="../js/lib/jquery-ui.min.js"></script>-->
+    <script type="text/javascript" src="../js/lib/jquery.fullPage.js"></script>
+
+    <!-- H5对象资源&管理内容：页-组件 -->
+    <script type="text/javascript" src="../js/H5.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/H5.css">
+
+    <script type="text/javascript" src="../js/H5ComponentBase.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/H5ComponentBase.css">
+
+    <style type="text/css">
+        body{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+<!-- 测试内容组织功能，以及fullPage页面切换&组件切换 -->
+
+<!-- 内容组织管理，有可能会加载若干个资源 -->
+
+<script type="text/javascript">
+    $(function(){
+        var h5=new H5();
+        h5.addPage('face','#ffc000')
+                .addComponent('boy',{
+                    text:'',
+                    width:390,
+                    height:462,
+                    rotateY:90,
+                    css:{
+                        top:39,
+                        background:'url(../imgs/boy.png)'
+                    },
+                    center:true,
+//                    animateIn:{opacity:1},
+//                    animateOut:{opacity:0}
+                })
+                .addComponent('logo',{
+                    text:'itcast',
+                    width:220,
+                    height:56,
+                    css:{
+                        transform:'translate(-55px,225px) rotate(-12deg)',
+                        position:'absolute',
+                        backgroundColor:'#ffc000',
+                        backgroundImage:'url(../imgs/txt.png)',
+                        fontSize:'20px',
+                        fontFamily:'微软雅黑',
+                        textAlign:'center',
+                        borderRadius:'14px 0 14px 0'
+                    },
+                    preserve3d:3,
+                    center:true,
+                })
+                .addComponent('zhaoping',{
+                    text:'',
+                    width:610,
+                    height:416,
+                    preserve3d:1,
+                    css:{
+                        top:249,
+                        backgroundImage:'url(../imgs/zhaoping.png)'
+                    },
+                    center:true,
+                })
+                .addComponent('caption',{
+                    text:'',
+                    width:484,
+                    height:178,
+                    css:{
+                        top:379,
+                        backgroundImage:'url(../imgs/zhandou.png)'
+                    },
+                    preserve3d:2,
+                    center:true
+                })
+                .addPage()
+                .loader()
+    })
+    var leave=true;
+    //click绑定进出场切换
+    $('body').click(function(){
+        leave=!leave
+        $('.h5_component').trigger(leave?'onLeave':'onLoad')
+    })
+</script>
+</body>
+
+</html>

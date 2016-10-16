@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+
+    <title></title>
+
+    <!-- 基本资源库 -->
+    <script type="text/javascript" src="../js/lib/jquery.js"></script>
+    <script type="text/javascript" src="../js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../js/lib/jquery.fullPage.js"></script>
+
+    <!-- H5对象资源&管理内容：页-组件 -->
+    <script type="text/javascript" src="../js/H5.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/H5.css">
+
+    <script type="text/javascript" src="../js/H5ComponentBase.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/H5ComponentBase.css">
+
+    <style type="text/css">
+        body{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+
+</head>
+
+<body>
+<!-- 测试内容组织功能，以及fullPage页面切换&组件切换 -->
+
+<!-- 内容组织管理，有可能会加载若干个资源 -->
+
+<script type="text/javascript">
+    $(function(){
+        var h5=new H5();
+        h5.addPage('face')
+                .addComponent('logo',{
+                    text:'logo',
+                    width:100,
+                    height:100,
+                    css:{
+                        top:100,
+                        background:'red',
+                        opacity:0
+                    },
+                    center:true,
+                    animateIn:{opacity:1},
+                    animateOut:{opacity:0}
+                })
+                .addComponent('slogan',{
+                    text:'slogan',
+                    width:100,
+                    height:100,
+                    css:{
+                        top:400,
+                        background:'red'
+                    },
+                    center:true,
+
+                })
+                .addPage('desc')
+                .addComponent('caption',{
+                    text:'核心理念',
+                    width:100,
+                    height:100,
+                    css:{
+                        top:400,
+                        background:'red'
+                    },
+                    center:true,
+                })
+                .addPage('bage-3')
+                .addComponent('caption',{text:'课程方向分布'})
+                .loader()
+    })
+</script>
+</body>
+
+</html>
