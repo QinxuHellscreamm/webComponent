@@ -1,0 +1,55 @@
+/* 基本图文组件样式 */
+.h5_component{
+    position: absolute;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+/*自定义class*/
+.component-rotateY90{
+    animation:rotateY90 1s
+}
+@keyframes rotateY90{
+    0%{opacity: 0;transform:rotateY(90deg)}
+    25%{opacity: 1;transform:rotateY(0deg)}
+    55%{transform:rotateY(25deg)}
+    70%{transform:rotateY(0deg)}
+    80%{transform:rotateY(25deg)}
+    100%{transform:rotateY(0deg)}
+}
+.preserve-3d1{
+    transform-style:preserve-3d;
+    animation: translatez1 2s;
+    transform:perspective(1000px) translateZ(100px)
+}
+.preserve-3d2{
+    transform-style:preserve-3d;
+    animation: translatez2 .7s;
+    transform:perspective(1000px) translateZ(1px)
+}
+.preserve-3d3{
+    transform-style:preserve-3d;
+    animation: translatez3 1s;
+}
+@keyframes translatez1{
+    0%{opacity: 0;transform:perspective(110px) translateZ(120px)}
+    20%{transform:perspective(0px) translateZ(100px)}
+    30.5%{opacity: 1;transform:perspective(1000px) translateZ(100px)}
+    40%{transform:perspective(500px) translateZ(100px)}
+    45%{transform:perspective(300px) translateZ(10px)}
+    60%{transform:perspective(1000px) translateZ(100px)}
+}
+@keyframes translatez2 {
+    0% {opacity: 0;transform: perspective(1000px) translateZ(-1200px)}
+    100% {transform: perspective(1000px) translateZ(1px)}
+}
+@keyframes translatez3{
+    0%{opacity: 0;transform: translateX(-55px) translateY(225px) rotate(-12deg)}
+    20%{transform:translateX(-55px) translateY(225px) rotate(0deg)}
+    30%{opacity: 1;transform:translateX(-55px) translateY(225px) rotate(-12deg) }
+    40%{transform:translateX(-55px) translateY(225px) rotate(0deg) }
+    50%{transform:translateX(-55px) translateY(225px) rotate(-12deg) }
+    60%{transform:translateX(-55px) translateY(225px) rotate(0deg) }
+    70%{transform:translateX(-55px) translateY(225px) rotate(-12deg) }
+
+}
