@@ -1,5 +1,7 @@
 # webComponent
 ### 组件介绍
-    1
-    2
-    3
+    组件目前还处于开发测试阶段，目前封装了一些css3动画组件，以及数据可视化散点图组件。
+    组件依赖jqery以及jquery.fullpage
+    组件依赖H5.js、H5_Component_Base.js、H5.css、H5_Component_Base.css
+    如果需要使用数据可视化需要引用响应的js文件和css文件，如散点图需要引用Point.js,Point.css
+    
