@@ -12,7 +12,7 @@ this.addComponent(name,cfg)//组件名，配置参数
 this.loader()//生成的页面默认隐藏，需要在代码末尾调用H5的loader方法来让页面显示。
 ```
 #####Point示例代码
-```
+```javascript
 $(function(){
         var h5=new H5()
         var cfg={
