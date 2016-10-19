@@ -37,3 +37,4 @@ $(function(){
         h5.loader()
     })
 ```
+ ![image](https://github.com/QinxuHellscreamm/webComponent/imgs/point.gif)
