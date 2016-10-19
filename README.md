@@ -37,4 +37,4 @@ $(function(){
         h5.loader()
     })
 ```
-![image](https://github.com/QinxuHellscreamm/webComponent/tree/master/imgs/point.gif)
+![image](https://github.com/QinxuHellscreamm/webComponent/blob/master/imgs/point.gif)
