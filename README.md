@@ -37,4 +37,5 @@ $(function(){
         h5.loader()
     })
 ```
+#####下图为示例代码生成的效果
 ![image](https://github.com/QinxuHellscreamm/webComponent/blob/master/imgs/point.gif)
