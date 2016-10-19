@@ -4,4 +4,9 @@
 * 组件依赖`jqery`&`jquery.fullpage`
 * 组件依赖`H5.js` `H5_Component_Base.js` `H5.css` `H5_Component_Base.css`
 * 如果需要使用数据可视化需要引用响应的js文件和css文件，如散点图需要引用`Point.js` `Point.css`
-    
+#### 类规划
+H5.js中规划了H5类用于构建整个页面，内置了三个方法`addpage`&`addcomponent`&`loader`
+```javascript
+this.addpage(name,bgc,text)//添加页面的名字string，背景，文本
+this.addComponent(name,cfg)//组件名，配置参数
+```
