@@ -9,4 +9,5 @@ H5.js中规划了H5类用于构建整个页面，内置了三个方法`addpage`&
 ```javascript
 this.addpage(name,bgc,text)//添加页面的名字string，背景，文本
 this.addComponent(name,cfg)//组件名，配置参数
+this.loader()//生成的页面默认隐藏，需要在代码末尾调用H5的loader方法来让页面显示。
 ```
