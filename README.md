@@ -34,6 +34,7 @@ $(function(){
             },
             center:true//组件水平居中
         }
+/*addPage&addComponent支持链式调用方法都会返回this也就是调用者h5，addpage是在最后的位置添加页面,addcomponent在最后一页添加组件*/
         h5.addPage('one','#efefef').addComponent('point',cfg).addPage('two')//addcomponent这个方法中会根据cfg的type类型自动生成相应的组件
         h5.loader()
     })
