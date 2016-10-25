@@ -6,6 +6,7 @@
 * 如果需要使用数据可视化需要引用响应的js文件和css文件，如散点图需要引用`Point.js` `Point.css`
 #### 类规划
 H5.js中规划了H5类用于构建整个页面，内置了三个方法`addpage`&`addcomponent`&`loader`
+#####核心API
 ```javascript
 this.addpage(name,bgc,text)//添加页面的名字string，背景，文本
 this.addComponent(name,cfg)//组件名，配置参数
@@ -33,7 +34,7 @@ $(function(){
             },
             center:true//组件水平居中
         }
-        h5.addPage('one','#efefef').addComponent('point',cfg).addPage('two')
+        h5.addPage('one','#efefef').addComponent('point',cfg).addPage('two')//addcomponent这个方法中会根据cfg的type类型自动生成相应的组件
         h5.loader()
     })
 ```
