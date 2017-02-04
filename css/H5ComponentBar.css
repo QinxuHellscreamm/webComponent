@@ -1,0 +1,24 @@
+/* 柱状组件样式 */
+.h5_component_bar .line{
+    height: 45px;
+}
+.h5_component_bar .rate{
+   height: 15px;
+   position: relative;
+}
+.h5_component_bar .rate .bg{
+    height: 15px;
+    width: 0;
+    position: absolute;
+    bottom: 16px;
+}
+.h5_component_bar .per {
+position: absolute;
+    right: -22px;
+    top: 0;
+}
+.h5_comonent_bar{
+
+}
+
+

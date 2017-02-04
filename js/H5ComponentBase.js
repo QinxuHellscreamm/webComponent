@@ -1,4 +1,4 @@
-/* 基本组件对象 */
+/* 基本图文组件对象 */
 var H5ComponentBase=function(name,cfg){
     var cfg=cfg||[]
     var id=('h5_c_'+Math.random()).replace('.','_')
@@ -30,17 +30,25 @@ var H5ComponentBase=function(name,cfg){
     }
     //加载执行
     component.on('onLoad',function(){
-        console.log('结束翻页')
+        console.log('开始翻页')
         component.removeClass(cls+'_leave').addClass(cls+'_load')
         cfg.animateIn&&component.animate(cfg.animateIn)
-        cfg.rotateY==90&&(component.addClass('component-rotateY90'));
-        cfg.preserve3d&&(component.addClass('preserve-3d'+cfg.preserve3d))
+        cfg.animation&&(component.addClass('animation'+cfg.animation))
         if(cfg.type=='point'){
             points=component.find('.point')
-            for(var i=0;i<points.length;i++){
-                //point.css('left',item[3]).css('top',item[4])
-                console.log($(points[i]).data('left'));
-                $(points[i]).animate({'top':$(points[i]).data('top'),'left':$(points[i]).data('left'),'margin':0})
+            $.each(points,function(idx,item){
+                console.log(points);
+                $(item).animate({'top':item.data('top'),'left':$(item).data('left'),'margin':0},500)
+            })
+        }else if(cfg.type=='bar'){
+             bar=component.find('.bg')
+            for(var i=0;i<bar.length;i++){
+                $(bar[i]).animate({width:'100%'},1000)
+            }
+        }else if(cfg.type=='bar_v'){
+             bar=component.find('.bg')
+            for(var i=0;i<bar.length;i++){
+                $(bar[i]).animate({height:'100%'},1000)
             }
         }
 
@@ -48,7 +56,7 @@ var H5ComponentBase=function(name,cfg){
     })
     //离开执行
     component.on('onLeave',function(){
-        console.log('开始翻页')
+        console.log('结束翻页')
         component.removeClass(cls+'_load').addClass(cls+'_leave')
         cfg.animateOut&&component.animate(cfg.animateOut)
         for(var i=0;i<component[0].classList.length;i++){
@@ -65,7 +73,14 @@ var H5ComponentBase=function(name,cfg){
                 if(i!=0){
                     $(points[i]).animate({'left':'50%','marginLeft':-$(points[i]).width()/2,'top':'50%','marginTop':-$(points[i]).width()/2})
                 }
-
+            }
+        }else if(cfg.type=='bar'){
+            for(var i=0;i<bar.length;i++){
+                $(bar[i]).animate({width:0})
+            }
+        }else if(cfg.type=='bar_v'){
+            for(var i=0;i<bar.length;i++){
+                $(bar[i]).animate({height:0})
             }
         }
         return false

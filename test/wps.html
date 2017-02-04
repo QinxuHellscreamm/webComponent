@@ -29,7 +29,6 @@
 <!-- 测试内容组织功能，以及fullPage页面切换&组件切换 -->
 
 <!-- 内容组织管理，有可能会加载若干个资源 -->
-
 <script type="text/javascript">
     $(function(){
         var h5=new H5();
@@ -40,12 +39,13 @@
                     height:462,
                     rotateY:90,
                     css:{
+                        opacity:0,
                         top:39,
                         background:'url(../imgs/boy.png)'
                     },
                     center:true,
-//                    animateIn:{opacity:1},
-//                    animateOut:{opacity:0}
+                    animateIn:{opacity:1},
+                    animateOut:{opacity:0}
                 })
                 .addComponent('logo',{
                     text:'itcast',

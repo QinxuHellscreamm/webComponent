@@ -1,0 +1,29 @@
+/* 垂直柱状组件样式 */
+.h5_component_bar_v .line{
+text-align: center;
+    float: left;
+    position: relative;
+    height: 100%;
+}
+.h5_component_bar_v .rate{
+    height: 0%;
+    width: 100%;
+    position: absolute;
+    bottom: 13px;
+}
+.h5_component_bar_v .rate .bg{
+    height: 0%;
+    width: 15px;
+    position: absolute;
+    bottom: 0px;
+}
+.h5_component_bar_v .per {
+position: relative;
+    top: -15px;
+
+}
+.h5_component_bar_v .name{
+position: absolute; bottom: 0;width: 100%;
+    text-align: center;
+}
+

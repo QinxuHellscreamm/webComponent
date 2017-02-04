@@ -10,6 +10,7 @@
         body{
             margin: 0;
             padding: 0;
+            background-color: #000;
             font-size: 12px;
         }
         .iphone{
@@ -27,45 +28,46 @@
     <script type="text/javascript" src="../js/H5.js"></script>
     <script type="text/javascript" src="../js/H5ComponentBase.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/H5ComponentBase.css">
-    <!-- 引入散点图的资源 -->
-    <script type="text/javascript" src="../js/H5ComponentPoint.js"></script>
-    <link rel="stylesheet" type="text/css" href="../css/H5ComponentPoint.css">
+    <!-- 引入柱图的资源 -->
+    <script type="text/javascript" src="../js/H5ComponentBar_v.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/H5ComponentBar_v.css">
 
 <body>
-<!-- 用于开发测试 H5ComponentPoint 对象（基本的图文组件） -->
+<!-- 用于开发测试 H5ComponentBar 对象（柱图组件） -->
 <div class="iphone">
 
 </div>
 
 <script type="text/javascript">
     var cfg={
-
-        width:300,
-        height:300,
-        /*data参数 默认data[0]为参照物，不可以添加位置参数，z-index最高，宽高为component的百分之百，其余data内容均在component中水平垂直居中，且五个参数必不可少*/
-                data:[
-                        ['A项',.4,'green'], /*文本，大小比例，颜色，left (number)，top(per)*/
-                        ['B项',.2,'yellow',-40,'-50%'],
-                        ['C项',.22,'red',140,'80%'],
-                        ['D项',.15,'blue',100,'-60%'],
-                        ['E项',.15,'black',-40,'150%']
-                ],
+        type:'bar_v',
+        width:550,
+        height:600,
+        /*data参数 默认data[0]为参照物，z-index最高，宽高为component的百分之百，其余data内容均在component中水平垂直居中，且五个参数必不可少，data【0】的【4-5】设置位置参数也不会生效*/
+        data:[
+            ['Javascrpt',.7,'#f60'], /*文本，大小比例，颜色，left，top*/
+            ['HTML',.2,'#bbb'],
+            ['CSS3',.15],
+            ['JQuery',.45],
+            ['Bootstap',.05],
+        ],
         css:{
-            bottom:200,
-            color:'#ddd'
+            top:'200px',
+            color:'#aaa'
         },
         center:true
     }
     var h5=new H5('h5')
-    h5.addPage('one','#efefef').addComponent('point',cfg)
-    h5.loader()
+    h5.addPage('one').addComponent('bar_v',cfg)
+
     var leave=true;
     $('body').click(function(){
         leave=!leave
         $('.h5_component').trigger(leave?'onLeave':'onLoad')
     })
+    h5.loader()
+
 </script>
 
 </body>
-
 </html>

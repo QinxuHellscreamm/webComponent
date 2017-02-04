@@ -28,13 +28,20 @@ var H5=function(){
         var cfg=cfg||{}
         cfg= $.extend({
             type:'base'
-        },cfg)
+        },cfg)//extend 重载原型 合并对象
         var component;
         var page=this.page.slice(-1)[0]//取最后一个page
         switch (cfg.type){
             case 'base':
                 component = new H5ComponentBase(name,cfg);
                 break;
+            case 'point':
+                component=new H5ComponentPoint(name,cfg);
+                break
+            case 'bar':
+                component=new H5ComponentBar(name,cfg);
+            case 'bar_v':
+                component=new H5ComponentBar_v(name,cfg)
             default:
         }
         page.append(component)
@@ -45,7 +52,6 @@ var H5=function(){
         this.el.show()
         this.el.fullpage({
             onLeave:function(index,nextIndex,direction){
-                console.log($(this));
                 $(this).find('.h5_component').trigger('onLeave')
             },
             afterLoad:function(anchorLink,index){

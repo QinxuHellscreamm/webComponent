@@ -12,14 +12,13 @@ var H5ComponentPoint=function(name,cfg){
         /*百分比*/
         var per=item[1]/base*100+'%'
         point.width(per).height(per)
-        console.log(item);
-        console.log(point.width()*1.5);
         if(item[2]){
             point.css('backgroundColor',item[2])
         }
         if(item[3]!==undefined&&item[4]){
                 point.css({'left':'50%','marginLeft':-(point.width())/2*1.5}).css({'top':'50%','marginTop':-(point.width())/2*1.5})
                 point.data('left',item[3]).data('top',item[4])
+            console.log(point)
         }else{
             point.css({'zIndex':10})
         }
